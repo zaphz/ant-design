@@ -93,8 +93,8 @@ a.init = function () {
         mc.style.opacity = "0";
         mc.style.visibility = "visible";
         if (data) {
-            if ((data.style || data.name) && !data.to) {
-                self.addStyle(mc, self.animNameGroup(data.style || data.name))
+            if (data.style && !data.to) {
+                self.addStyle(mc, self.animNameGroup(data.style))
             }
         } else {
             self.addStyle(mc, self.animNameGroup(self.str))
@@ -311,8 +311,8 @@ a.addTween = function () {
                     mc.style[self.getTransition()] = "none";
                     self.addClass(mc, data.css);
                     setAnimEventEnd(mc, data.css);
-                } else if ((data.style || data.name) && !data.css) {
-                    var _name = self.animNameGroup(data.style || data.name);
+                } else if (data.style && !data.css) {
+                    var _name = self.animNameGroup(data.style);
                     fjStyle(mc, _name);
                     if (data.to) {
                         self.addStyle(mc, _name)
@@ -389,7 +389,7 @@ new antd.startAnimation(node,string)</code></pre>
 
 ####data参数（string|array）;
 
-支持css样式，内置name和style直接添加动画；
+支持css样式，和style直接添加动画；
 
 为string时，自动遍历node下的子节点来执行data样式；
 
@@ -403,8 +403,8 @@ new antd.startAnimation(node,string)</code></pre>
 
 node用的是".a",做b,c的动画，那data为：[]为最外层div;
 <pre><code>[
-{name:"x-left"},
-{name:"x-left"}
+{style:"x-left"},
+{style:"x-left"}
 ]</code></pre>
 
 如果元素为多个时：
@@ -420,9 +420,9 @@ node用的是".a",做b,c的动画，那data为：[]为最外层div;
 处理每个li里的span的动画时，data为:
 
 <pre><code>[
-[{name:"x-left"}],
-[{name:"x-left"}],
-[{name:"x-left"}]
+[{style:"x-left"}],
+[{style:"x-left"}],
+[{style:"x-left"}]
 ]</code></pre>
 
 
@@ -431,8 +431,7 @@ node用的是".a",做b,c的动画，那data为：[]为最外层div;
 |参数             |详细                                                 |
 |-----------------|----------------------------------------------------|
 |css              |你的动画CSS样式,此项有值时，其它参数无效；               |
-|style            |style样式，如transform: translateX(100px),每个样式必须以;结束；如CSS有值，此项无效|
-|name             |内置动画样式；<br/><code>x-left</code><code>x-right</code><code>y-top</code><code>y-bottom</code><code>scale</code><code>scaleFrom</code><code>scaleX</code><code>scaleY</code><br/>如果css或style有值，此项无效；|
+|style            |style样式，如transform: translateX(100px),每个样式必须以;结束；<br/>也可以用内置动画样式：<br/><code>x-left</code><code>x-right</code><code>y-top</code><code>y-bottom</code><code>scale</code><code>scaleFrom</code><code>scaleX</code><code>scaleY</code><br/>如CSS有值，此项无效|
 |to               |动画到你设定的样式;默认为false,false时值为from;如CSS有值，此项无效|
 |timer            |动画的时间；默认0.5;如CSS有值，此项无效；|
 |ease             |样式缓动;默认cubic-bezier(0.165, 0.84, 0.44, 1);如CSS有值，此项无效;|
