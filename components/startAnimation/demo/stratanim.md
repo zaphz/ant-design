@@ -8,32 +8,32 @@
 ````jsx
 //new antd.startAnimation("要执行的dom","动画的数据","延时");
 new antd.startAnimation(".demo-startAnim",[
-[{name:"x-right"},[{style:"transform: scale(0)"},{name:"x-right"},{name:"x-right"},{name:"x-right"},{name:"x-right"}]],
+[{style:"x-right"},[{style:"transform: scale(0)"},{style:"x-right"},{style:"x-right"},{style:"x-right"},{style:"x-right"}]],
 [
-{name:"x-right"},
-[[{name:"x-right"},{style:"transform: scale(0)"},{name:"x-right"}]],
-{name:"x-right"},
-[[{name:"y-bottom"},{name:"y-bottom"}]]
+{style:"x-right"},
+[[{style:"x-right"},{style:"transform: scale(0)"},{style:"x-right"}]],
+{style:"x-right"},
+[[{style:"y-bottom"},{style:"y-bottom"}]]
 ],
-{name:"y-bottom"}
+{style:"y-bottom"}
 ])
 $(function (){
 $("#overBtn").bind("click",function (e){
 new antd.startAnimation(".demo-startAnim",[
-[{name:"x-right"},[{name:"x-right"},{name:"x-right"},{name:"x-right"},{name:"x-right"},{name:"x-right"}]],
+[{style:"x-right"},[{style:"x-right"},{style:"x-right"},{style:"x-right"},{style:"x-right"},{style:"x-right"}]],
 [
-{name:"x-right"},
-[[{name:"x-right"},{name:"x-right"},{name:"x-right"}]],
-{name:"x-right"},
-[[{name:"y-bottom"},{name:"y-bottom"}]]
+{style:"x-right"},
+[[{style:"x-right"},{style:"x-right"},{style:"x-right"}]],
+{style:"x-right"},
+[[{style:"y-bottom"},{style:"y-bottom"}]]
 ],
-{name:"y-bottom"}
+{style:"y-bottom"}
 ])
 });
 $("#listBtn").bind("click",function (e){
 new antd.startAnimation(".demo-list",[
-[{name:"y-bottom"},[{name:"y-bottom"},{name:"y-bottom"},{name:"y-bottom"},{name:"y-bottom"},{name:"y-bottom"}]],
-[{name:"y-bottom",delay:0.2,delayRewrite:true},[{name:"y-bottom"},{name:"y-bottom"},{name:"y-bottom"},{name:"y-bottom"},{name:"y-bottom"}]],
+[{style:"y-bottom"},[{style:"y-bottom"},{style:"y-bottom"},{style:"y-bottom"},{style:"y-bottom"},{style:"y-bottom"}]],
+[{style:"y-bottom",delay:0.2,delayRewrite:true},[{style:"y-bottom"},{style:"y-bottom"},{style:"y-bottom"},{style:"y-bottom"},{style:"y-bottom"}]],
 ])
 });
 })
