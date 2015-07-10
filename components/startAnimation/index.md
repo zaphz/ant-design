@@ -366,7 +366,7 @@ a.animNameGroup = function (name) {
     return _style
 };
 
-antd.startAnimation = startAnim;gi
+antd.startAnimation = startAnim;
 })();
 </script>
 
